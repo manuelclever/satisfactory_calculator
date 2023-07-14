@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<items>
+    <read_only>true</read_only>
+    <item>
+        <id>0</id>
+        <name>DummyItem. DO NOT REMOVE.</name>
+        <mj>0</mj>
+    </item>
+    <item>
+        <id>1</id>
+        <name>Gold</name>
+        <mj>0</mj>
+        <in>0,0</in>
+    </item>
+    <item>
+        <id>2</id>
+        <name>Copper</name>
+        <mj>0</mj>
+        <in>0,0</in>
+    </item>
+    <item>
+        <id>3</id>
+        <name>Aluminum</name>
+        <mj>0</mj>
+        <in>0,0</in>
+    </item>
+    <item>
+        <id>4</id>
+        <name>Circuit Board</name>
+        <mj>0</mj>
+        <in>2,12</in>
+        <in>1,4</in>
+    </item>
+    <item>
+        <id>5</id>
+        <name>Case</name>
+        <mj>0</mj>
+        <in>3,5</in>
+    </item>
+    <item>
+        <id>6</id>
+        <name>Monitor</name>
+        <mj>0</mj>
+        <in>3,2</in>
+        <in>4,2</in>
+    </item>
+    <item>
+        <id>9</id>
+        <name>Element9</name>
+        <mj>0</mj>
+        <in>1,3</in>
+        <in>4,2</in>
+    </item>
+</items>

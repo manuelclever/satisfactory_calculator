@@ -1,0 +1,12 @@
+#Save this file as 'itemNameBundle_' + languageKey + '.properties'
+DummyItem.DONOTREMOVE. = 
+IronOre = 
+CopperOre = 
+Limestone = 
+Concrete = 
+IronRod = 
+IronPlate = 
+Wire = 
+CircuitBoard = 
+VersatileFramework = 
+Computer = 

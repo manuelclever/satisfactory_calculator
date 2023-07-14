@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<items>
+    <read_only>true</read_only>
+    <item>
+        <id>0</id>
+        <name>DummyItem. DO NOT REMOVE.</name>
+        <mj>0</mj>
+    </item>
+    <item>
+        <id>1</id>
+        <name>Gold</name>
+        <mj>0</mj>
+        <in>0,0</in>
+    </item>
+    <item>
+        <id>2</id>
+        <name>Copper</name>
+        <mj>0</mj>
+        <in>0,0</in>
+    </item>
+    <item>
+        <id>3</id>
+        <name>Aluminum</name>
+        <mj>0</mj>
+        <in>0,0</in>
+    </item>
+    <item>
+        <id>7</id>
+        <name>Computer Parts</name>
+        <mj>0</mj>
+    </item>
+</items>

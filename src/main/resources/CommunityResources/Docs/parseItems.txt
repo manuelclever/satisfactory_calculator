@@ -1,0 +1,50 @@
+local p = {}
+local json = require('Module:Json')
+local helper = require('Module:DecodeHelper')
+local sinkPoins = json.decode(mw.getCurrentFrame():expandTemplate{title='Template:ResourceSinkPoints.json'})
+local docs = mw.loadData('Module:GetDocs')
+local docsStr = mw.getCurrentFrame():expandTemplate{title='Template:Docs.json'}
+local blueprintPattern = "/Game/FactoryGame/%w-/?%w-/?%w-/?%w/[_%w]-%."
+
+local function parseItems(items, type)
+  local list = ''
+  for i, item in pairs(items) do    
+    -- item is read-only, let's copy it to temp table args
+    local args = {}
+    for k,v in pairs(item) do
+      args[k] = v
+    end
+
+    if args.mFluidColor ~= nil then
+      args.mFluidColor = helper.decodeRGB(args.mFluidColor)
+    end
+    args.mStackSize = helper.decodeStackSize(args.mStackSize)
+    args.Type = type
+    args.mBlueprint = docsStr:match(blueprintPattern .. args.ClassName)
+    -- get sink points from manually compiled json file until CSS adds this field back
+    args.mResourceSinkPoints = sinkPoins[args.mDisplayName]
+
+    local name = mw.getCurrentFrame():expandTemplate{title='Item', args=args}
+    list = list .. name .. '\n\n'
+  end
+  
+  return list
+end
+
+p.parse = function(...)
+  local list = ''
+  
+  for i, node in pairs(docs) do
+    if node.NativeClass == "Class'/Script/FactoryGame.FGItemDescriptor'" or
+       node.NativeClass == "Class'/Script/FactoryGame.FGItemDescriptorBiomass'" or
+       node.NativeClass == "Class'/Script/FactoryGame.FGResourceDescriptor'" or
+       node.NativeClass == "Class'/Script/FactoryGame.FGConsumableDescriptor'" or
+       node.NativeClass == "Class'/Script/FactoryGame.FGEquipmentDescriptor'" or
+       node.NativeClass == "Class'/Script/FactoryGame.FGItemDescriptorNuclearFuel'" then
+      list = list .. parseItems(node.Classes, string.sub(node.NativeClass, 29, -2))          .. '---\n\n'
+    end
+  end
+  return list
+end
+
+return p

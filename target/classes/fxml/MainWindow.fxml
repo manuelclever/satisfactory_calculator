@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="mainAnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="600.0" prefHeight="500.0" prefWidth="900.0" stylesheets="@../css/bootstrap2.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.manuelclever.satisfactorycalculator.gui.MainWindowController">
+    <children>
+      <StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+              <TabPane fx:id="tabPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="500.0" prefWidth="900" tabClosingPolicy="UNAVAILABLE">
+                  <tabs>
+                      <Tab closable="false" text="Calculator">
+                          <fx:include source="TabCalculator.fxml" />
+                      </Tab>
+                      <Tab closable="false" text="Graphic">
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                      </Tab>
+                      <Tab fx:id="tabRecipe" closable="false" text="Recipes">
+                          <fx:include fx:id="tabRecipePage" source="TabRecipePage.fxml" />
+                      </Tab>
+                      <Tab closable="false" text="Settings">
+                          <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          </content>
+                      </Tab>
+                  </tabs>
+              </TabPane>
+            <MenuButton fx:id="menuLanguage" mnemonicParsing="false" textAlignment="RIGHT" StackPane.alignment="TOP_RIGHT">
+               <StackPane.margin>
+                  <Insets right="8.0" top="5.0" />
+               </StackPane.margin>
+            </MenuButton>
+         </children>
+      </StackPane>
+
+    </children>
+</AnchorPane>
